@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.adhrox.horoscapp.R
 import com.adhrox.horoscapp.databinding.FragmentLuckBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LuckFragment : Fragment() {
 
     private var _binding: FragmentLuckBinding? = null
