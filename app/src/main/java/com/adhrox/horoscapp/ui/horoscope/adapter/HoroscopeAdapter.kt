@@ -6,7 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.adhrox.horoscapp.R
 import com.adhrox.horoscapp.domain.model.HoroscopeInfo
 
-class HoroscopeAdapter(private var horoscopeList: List<HoroscopeInfo> = emptyList()): RecyclerView.Adapter<HoroscopeViewHolder>() {
+class HoroscopeAdapter(private var horoscopeList: List<HoroscopeInfo> = emptyList(),
+    private val onItemSelected: (HoroscopeInfo) -> Unit): RecyclerView.Adapter<HoroscopeViewHolder>() {
 
     fun updateList(horoscopeList: List<HoroscopeInfo>){
         this.horoscopeList = horoscopeList
@@ -22,7 +23,7 @@ class HoroscopeAdapter(private var horoscopeList: List<HoroscopeInfo> = emptyLis
     override fun getItemCount() = horoscopeList.size
 
     override fun onBindViewHolder(holder: HoroscopeViewHolder, position: Int) {
-        holder.render(horoscopeList[position])
+        holder.render(horoscopeList[position], onItemSelected)
     }
 
 }
